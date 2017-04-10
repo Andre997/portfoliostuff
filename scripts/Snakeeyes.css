@@ -1,0 +1,32 @@
+.imgdice {
+  min-width: 615px;
+
+}
+
+.snakeEyes section {
+  margin: 0 auto;
+
+}
+
+.snakeEyes {
+  width: 700px;
+  display: table;
+
+}
+
+.diceRoll {
+  width: 297px !important;
+  height: 294px !important;
+  background: rgba(255,255,255,0.0) !important;
+
+}
+
+#roll {
+  margin: 0 275px;
+
+}
+
+.score {
+  max-width: 360px
+
+}
