@@ -1,4 +1,4 @@
-CONST newsAPI = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=cccfebb8552d4b1899fb0cbbc7e08309";
+const newsAPI = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=cccfebb8552d4b1899fb0cbbc7e08309";
 
 const CACHED_URLS = [
     BASE_PATH + 'index.html',
