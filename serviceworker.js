@@ -1,6 +1,7 @@
 const newsAPI = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=cccfebb8552d4b1899fb0cbbc7e08309";
 const BASE_PATH = "/portfoliostuff/";
 const CACHE_NAME = "/Mazza/";
+const googleMapsAPIJS = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ZwEfTCmc0sEKDE1f-G-rMRgRWuDguB4&libraries=places&callback=initMap";
 const CACHED_URLS = [
     BASE_PATH + 'index.html',
 		BASE_PATH + 'projects.html',
