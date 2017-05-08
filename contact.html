@@ -9,33 +9,46 @@
 
 </style>
 </head>
-    
+
 <body>
     <div id="wrapper">
         <div id="callout">
             <p>Call us at <b>12345678900</b></p>
         </div>
         <header>
-             <img src="Images/Logo.png" alt="My Logo">
+          <picture style="width:auto;">
+              <source media="(min-width: 550px)" srcset ="Images/logoNew.gif">
+              <source media="(min-width: 350px)" srcset ="Images/logoNew2x.gif">
+              <source media="(min-width: 150px)" srcset ="Images/logoNew3x.gif">
+              <img src="Images/logoNew.gif" alt="My Logo Image">
+          </picture>
         </header>
         <nav>
             <ul>
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="myskills.html">My Skills</a></li>
-                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Project</a></li>
+                <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="clearfix"></div>
         </nav>
+          <section>
+            <form action="process.php" method="POST">
+              Username:
+              <input type="text" name="username"/>
+              Password:
+              <input type="password" name="password"/>
+
+              <input type="submit" name="submit" value="Login"/>
+
+          </section>
         <footer>
             <div class="section">
                 <p>Text</p>
                 <p><b>07567876865</b><br>
                 Staffordshire University<br>
                 Stafford, ST18 0AB<br>
-                j018862f@staffs.ac.uk</p>        
+                j018862f@staffs.ac.uk</p>
             </div>
             <div class="section">
                 <p>Share!</p>
@@ -47,12 +60,12 @@
                 </ul>
             </div>
             <div class="section">
-                
+
             </div>
-             
+
         </footer>
     </div>
         <p style="text-align: center; padding: 0px;">&#169; Copyright - Andre Jarrett Portfolio, 2016</p>
 </body>
-    
+
 </html>
