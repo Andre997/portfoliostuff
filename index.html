@@ -40,7 +40,7 @@
                 <img src="Images/logoNew.gif" alt="My Logo Image">
             </picture>
         </div>
-        
+
         <div id="google-map" style="height: 300px;"></div>
 
         <header>
@@ -121,6 +121,36 @@
             position: myLocation,
             map: map
           });
+
+          infowindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(google-maps);
+          service.nearbySearch({
+          location: pyrmont,
+         radius: 500,
+         type: ['store']
+       }, callback);
+     }
+
+      function callback(results, status) {
+       if (status === google.maps.places.PlacesServiceStatus.OK) {
+         for (var i = 0; i < results.length; i++) {
+           createMarker(results[i]);
+         }
+       }
+     }
+
+     function createMarker(place) {
+       var placeLoc = place.geometry.location;
+       var marker = new google.maps.Marker({
+         google-maps: map,
+         google-maps: place.geometry.location
+       });
+
+       google.maps.event.addListener(marker, 'click', function() {
+         infowindow.setContent(place.name);
+         infowindow.open(google-maps, this);
+       });
+
 }
 // Google Map
       </script>
