@@ -5,8 +5,6 @@
     <title>Andre HomePage</title>
     <meta name="viewport" content="width=divice-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
-    <link rel="shortcut icon" href="Icons">
     <link rel="apple-touch-icon" sizes="57x57" href="Images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="Images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="Images/apple-icon-72x72.png">
@@ -41,8 +39,11 @@
                 <source media="(min-width: 150px)" srcset ="Images/logoNew3x.gif">
                 <img src="Images/logoNew.gif" alt="My Logo Image">
             </picture>
-
         </div>
+
+        <div id="google-map" style="height: 300px;"></div>
+
+
 
         <header>
 
@@ -70,7 +71,6 @@
         </div>
         <div class="section">
             <h3>What I Have Learned</h3>
-            <img src="Images/learning.png" alt="My Logo">
             <p>HTML5</p>
             <p>Java Script</p>
             <p>PhotoShop</p>
@@ -79,7 +79,6 @@
         </div>
         <div class="section">
             <h3>Benifits Of My Skills</h3>
-            <img src="Images/benifits.png" alt="My Logo">
             <p>Knowledge of current web technologies</p>
             <p>Able to use various different web applications</p>
             <p>Organisations look for these key skills when hiring</p>
@@ -106,6 +105,27 @@
     </div>
         <p style="text-align: center; padding: 0px;">&#169; Copyright - Andre Jarrett Portfolio, 2016</p>
         <script src="script.js"></script>
-</body>
+        <script src="news.js"></script>
+        <script>
 
+          function initMap() {
+            var myLocation = {lat: 53.0103798, lng: -2.1801833};
+            var map = new google.maps.Map(document.getElementById('google-maps'), {
+              zoom: 2,
+              center: myLocation
+            });
+
+            var marker = new google.maps.Marker({
+            position: myLocation,
+            map: map
+          });
+// }                                                                                                  {(Google Map)}
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8ZwEfTCmc0sEKDE1f-G-rMRgRWuDguB4&callback=initMap">
+      </script>
+
+</body>
 </html>
+
+<!-- AIzaSyB8ZwEfTCmc0sEKDE1f-G-rMRgRWuDguB4 -->

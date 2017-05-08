@@ -1,16 +1,4 @@
-/*
-USED CODE FROM:
-https://google-developers.appspot.com/maps/documentation/javascript/examples/place-search
-https://developers.google.com/maps/documentation/javascript/reference
-https://blackboard.staffs.ac.uk/bbcswebdav/pid-2235624-dt-content-rid-13010762_1/xid-13010762_1
-https://blackboard.staffs.ac.uk/bbcswebdav/pid-2242242-dt-content-rid-13747388_1/xid-13747388_1
-https://blackboard.staffs.ac.uk/bbcswebdav/pid-2245009-dt-content-rid-14082217_1/xid-14082217_1
-https://blackboard.staffs.ac.uk/bbcswebdav/pid-2242241-dt-content-rid-13745851_1/xid-13745851_1
-https://blackboard.staffs.ac.uk/bbcswebdav/pid-2245008-dt-content-rid-14082216_1/xid-14082216_1
-
-
-*/
-
+CONST newsAPI = "https://newsapi.org/v1/articles?source=bbc-news&apiKey=cccfebb8552d4b1899fb0cbbc7e08309";
 
 const CACHED_URLS = [
     BASE_PATH + 'index.html',
@@ -97,19 +85,6 @@ self.addEventListener('fetch', function(event) {
           return networkResponse;
         }).catch(function() {
           return caches.match(event.request);
-        });
-      })
-    );
-  } else if (requestURL.href.includes('cdn.arstechnica.net/wp-content/uploads')) {
-    event.respondWith(
-      caches.open(TEMP_IMAGE_CACHE_NAME).then(function(cache) {
-        return cache.match(event.request).then(function(cacheResponse) {
-          return cacheResponse||fetch(event.request, {mode: 'no-cors'}).then(function(networkResponse) {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          }).catch(function() {
-            return cache.match('img/technews-default.svg');
-          });
         });
       })
     );
