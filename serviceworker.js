@@ -1,63 +1,51 @@
-var BASE_PATH = '/NAMEOF REPRO/';
-var CACHE_NAME = 'gih-cache-v6';
-var CACHED_URLS = [
-    // Our HTML
-    BASE_PATH + 'first.html',
+/*
+USED CODE FROM:
+https://google-developers.appspot.com/maps/documentation/javascript/examples/place-search
+https://developers.google.com/maps/documentation/javascript/reference
+https://blackboard.staffs.ac.uk/bbcswebdav/pid-2235624-dt-content-rid-13010762_1/xid-13010762_1
+https://blackboard.staffs.ac.uk/bbcswebdav/pid-2242242-dt-content-rid-13747388_1/xid-13747388_1
+https://blackboard.staffs.ac.uk/bbcswebdav/pid-2245009-dt-content-rid-14082217_1/xid-14082217_1
+https://blackboard.staffs.ac.uk/bbcswebdav/pid-2242241-dt-content-rid-13745851_1/xid-13745851_1
+https://blackboard.staffs.ac.uk/bbcswebdav/pid-2245008-dt-content-rid-14082216_1/xid-14082216_1
 
-    // Images for favicons
-    BASE_PATH + 'appimages/android-icon-36x36.png',
-    BASE_PATH + 'appimages/android-icon-48x48.png',
-    BASE_PATH + 'appimages/android-icon-72x72.png',
-    BASE_PATH + 'appimages/android-icon-96x96.png',
-    BASE_PATH + 'appimages/android-icon-144x144.png',
-    BASE_PATH + 'appimages/android-icon-192x192.png',
-    BASE_PATH + 'appimages/favicon-32x32.png',
 
-    //Images for page
-    BASE_PATH + 'appimages/offlinemap.jpg',
-    BASE_PATH + 'appimages/dino.png',
-    BASE_PATH + 'appimages/jack.jpg',
-    BASE_PATH + 'appimages/paddy.jpg',
-    BASE_PATH + 'appimages/favicon.ico',
-    BASE_PATH + 'appimages/favicon-16x16.png',
-    BASE_PATH + 'appimages/favicon-32x32.png',
-    BASE_PATH + 'appimages/favicon-96x96.png',
-    BASE_PATH + 'appimages/ms-icon-70x70.png',
-    BASE_PATH + 'appimages/ms-icon-144x144.png',
-    BASE_PATH + 'appimages/ms-icon-150x150.png',
-    BASE_PATH + 'appimages/ms-icon-310x310.png',
-    BASE_PATH + 'eventsimages/example-blog01.jpg',
-    BASE_PATH + 'eventsimages/example-blog02.jpg',
-    BASE_PATH + 'eventsimages/example-blog03.jpg',
-    BASE_PATH + 'eventsimages/example-blog04.jpg',
-    BASE_PATH + 'eventsimages/example-blog05.jpg',
-    BASE_PATH + 'eventsimages/example-blog06.jpg',
-    BASE_PATH + 'eventsimages/example-blog07.jpg',
-    BASE_PATH + 'eventsimages/example-work01.jpg',
-    BASE_PATH + 'eventsimages/example-work02.jpg',
-    BASE_PATH + 'eventsimages/example-work03.jpg',
-    BASE_PATH + 'eventsimages/example-work04.jpg',
-    BASE_PATH + 'eventsimages/example-work05.jpg',
-    BASE_PATH + 'eventsimages/example-work06.jpg',
-    BASE_PATH + 'eventsimages/example-work07.jpg',
-    BASE_PATH + 'eventsimages/example-work08.jpg',
-    BASE_PATH + 'eventsimages/example-work09.jpg',
-    // JavaScript
-    BASE_PATH + 'offline-map.js',
-    BASE_PATH + 'material.js',
-    // Manifest
+*/
+
+
+const CACHED_URLS = [
+    BASE_PATH + 'index.html',
+		BASE_PATH + 'projects.html',
+		BASE_PATH + 'news.html',
+		BASE_PATH + 'contact.html',
+		BASE_PATH + 'projects.json',
+    BASE_PATH + 'main.js',
+		BASE_PATH + 'script.js',
+    BASE_PATH + 'Images/android-icon-36x36.png',
+    BASE_PATH + 'Images/android-icon-48x48.png',
+    BASE_PATH + 'Images/android-icon-72x72.png',
+    BASE_PATH + 'Images/android-icon-96x96.png',
+    BASE_PATH + 'Images/android-icon-144x144.png',
+    BASE_PATH + 'Images/android-icon-192x192.png',
+    BASE_PATH + 'Images/logoNew.gif',
+    //BASE_PATH + 'img/ico/favicon-16x16.png',
+    // BASE_PATH + 'img/ico/favicon-32x32.png',
+    //BASE_PATH + 'img/ico/favicon-96x96.png',
+    // BASE_PATH + 'img/ico/ms-icon-144x144.png',
+		// BASE_PATH + 'img/offlinemap.jpg',
+		// BASE_PATH + 'img/hangman.png',
+		// BASE_PATH + 'img/snakeye.png',
+		// BASE_PATH + 'img/soundboard.png',
+		// BASE_PATH + 'img/fishtank.png',
+		// BASE_PATH + 'img/logo.svg',
+		// BASE_PATH + 'img/technews-default.svg',
     BASE_PATH + 'manifest.json',
-  // CSS and fonts
-    'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en',
-    'https://fonts.googleapis.com/icon?family=Material+Icons',
-    BASE_PATH + 'min-style.css',
-    BASE_PATH + 'styles.css'
+    // BASE_PATH + 'css/SourceCodePro-Black.otf',
+    // BASE_PATH + 'css/SourceCodePro-Regular.otf',
+    BASE_PATH + 'style.css',
+    // BASE_PATH + 'css/main.css'
 ];
 
-var googleMapsAPIJS = 'https://maps.googleapis.com/maps/api/js?key=YOURKEY&callback=initMap';
-
 self.addEventListener('install', function(event) {
-  // Cache everything in CACHED_URLS. Installation fails if anything fails to cache
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll(CACHED_URLS);
@@ -66,34 +54,67 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  var requestURL = new URL(event.request.url);
-  // Handle requests for index.html
-  if (requestURL.pathname === BASE_PATH + 'first.html') {
+  let requestURL = new URL(event.request.url);
+  if (requestURL.pathname === BASE_PATH + 'index.html') {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
-        return cache.match('first.html').then(function(cachedResponse) {
-          var fetchPromise = fetch('first.html').then(function(networkResponse) {
-            cache.put('first.html', networkResponse.clone());
+        return cache.match('index.html').then(function(cachedResponse) {
+          let fetchPromise = fetch('index.html').then(function(networkResponse) {
+            cache.put('index.html', networkResponse.clone());
             return networkResponse;
           });
           return cachedResponse || fetchPromise;
         });
       })
     );
- // Handle requests for Google Maps JavaScript API file
+  } else if (requestURL.pathname === BASE_PATH + 'news.html') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match('news.html').then(function(cachedResponse) {
+          let fetchPromise = fetch('news.html').then(function(networkResponse) {
+            cache.put('news.html', networkResponse.clone());
+            return networkResponse;
+          });
+          return cachedResponse || fetchPromise;
+        });
+      })
+    );
   } else if (requestURL.href === googleMapsAPIJS) {
     event.respondWith(
       fetch(
         googleMapsAPIJS+'&'+Date.now(),
         { mode: 'no-cors', cache: 'no-store' }
       ).catch(function() {
-        return caches.match('offline-map.js');
+        return caches.match('omap.js');
       })
     );
-  } else if (
-    CACHED_URLS.includes(requestURL.href) ||
-    CACHED_URLS.includes(requestURL.pathname)
-  ) {
+  } else if (requestURL.href === newsAPI) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          caches.delete(TEMP_IMAGE_CACHE_NAME);
+          return networkResponse;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
+  } else if (requestURL.href.includes('cdn.arstechnica.net/wp-content/uploads')) {
+    event.respondWith(
+      caches.open(TEMP_IMAGE_CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(cacheResponse) {
+          return cacheResponse||fetch(event.request, {mode: 'no-cors'}).then(function(networkResponse) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(function() {
+            return cache.match('img/technews-default.svg');
+          });
+        });
+      })
+    );
+} else if (CACHED_URLS.includes(requestURL.href) ||
+    				CACHED_URLS.includes(requestURL.pathname)) {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
         return cache.match(event.request).then(function(response) {
@@ -118,32 +139,3 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-
-let options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-const output = document.getElementById("myLocation");
-
-function success(pos) {
-
-	let latitude  = pos.coords.latitude;
-                        let longitude = pos.coords.longitude;
-	let accuracy = pos.coords.accuracy;
-
-    output.innerHTML = `Latitude is ${latitude} and Longitude is ${longitude}. More or less ${accuracy} metres.`;
-
-    const img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-    output.appendChild(img);
-
-};
-
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-};
-
-navigator.geolocation.getCurrentPosition(success, error, options);
