@@ -41,8 +41,6 @@
             </picture>
         </div>
 
-        <div id="google-map" style="height: 300px;"></div>
-
         <header>
 
         </header>
@@ -99,6 +97,8 @@
                 </ul>
             </div>
 
+            <div id="google-map" style="height: 300px;"></div>
+
         </footer>
     </div>
         <p style="text-align: center; padding: 0px;">&#169; Copyright - Andre Jarrett Portfolio, 2016</p>
@@ -106,9 +106,11 @@
         <script src="news.js"></script>
         <script>
 
+
+
           function initMap() {
             var myLocation = {lat: 53.0103798, lng: -2.1801833};
-            var map = new google.maps.Map(document.getElementById('google-maps'), {
+            var map = new google.maps.Map(document.getElementById('google-map'), {
               zoom: 2,
               center: myLocation
             });
@@ -117,7 +119,7 @@
             position: myLocation,
             map: map
           });
-}                                                                                                 
+}
 // Google Map
       </script>
       <script async defer
