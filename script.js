@@ -32,4 +32,3 @@ if(newsContainer){
 
             newsContainer.innerHTML = newsHTML;
         });
-}

@@ -17,7 +17,7 @@ const CACHED_URLS = [
 		BASE_PATH + 'projects.html',
 		BASE_PATH + 'news.html',
 		BASE_PATH + 'contact.html',
-		BASE_PATH + 'projects.json',
+		BASE_PATH + 'projects.html',
     BASE_PATH + 'main.js',
 		BASE_PATH + 'script.js',
     BASE_PATH + 'Images/android-icon-36x36.png',
