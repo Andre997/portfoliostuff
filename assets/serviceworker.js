@@ -3,7 +3,7 @@ var CACHE_NAME = 'gih-cache-v6';
 var CACHED_URLS = [
     // Our HTML
     BASE_PATH + 'first.html',
-
+    
     // Images for favicons
     BASE_PATH + 'appimages/android-icon-36x36.png',
     BASE_PATH + 'appimages/android-icon-48x48.png',
@@ -41,7 +41,7 @@ var CACHED_URLS = [
     BASE_PATH + 'eventsimages/example-work06.jpg',
     BASE_PATH + 'eventsimages/example-work07.jpg',
     BASE_PATH + 'eventsimages/example-work08.jpg',
-    BASE_PATH + 'eventsimages/example-work09.jpg',
+    BASE_PATH + 'eventsimages/example-work09.jpg',  
     // JavaScript
     BASE_PATH + 'offline-map.js',
     BASE_PATH + 'material.js',
@@ -119,31 +119,7 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-let options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
 
-const output = document.getElementById("myLocation");
 
-function success(pos) {
 
-	let latitude  = pos.coords.latitude;
-                        let longitude = pos.coords.longitude;
-	let accuracy = pos.coords.accuracy;
 
-    output.innerHTML = `Latitude is ${latitude} and Longitude is ${longitude}. More or less ${accuracy} metres.`;
-
-    const img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-    output.appendChild(img);
-
-};
-
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-};
-
-navigator.geolocation.getCurrentPosition(success, error, options);

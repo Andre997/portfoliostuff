@@ -1,13 +1,13 @@
 body {
-    background: #000;
+    background: #009933;
     font-family: Verdana, Tahoma, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 13px;
     overflow: auto;
 }
 h1, h2, h3 {
     text-align: center;
     padding-left: 5%;
-    color: #000000;
+    color: #000;
 }
 p {
     padding: 2%;
@@ -22,23 +22,23 @@ img {
 #wrapper {
     margin: 0 auto;
     max-width: 100%;
-    width:98%;
-    background: #FEFBE8;
-    border: 1px solid #ff0000;
+    width:95%;
+    background: #009933;
+    border: 100px solid #0000;
     border-radius: 2px;
     box-shadow: 0 0 10px 0px rgba(12, 3, 25, 0.8);
 }
 #callout{
     width: 100%;
     height: auto;
-    background: #000;
+    background: #006600;
     overflow: hidden;
 }
 #callout p {
-    text-align: right;
+    text-align: center;
     font-size: 13px;
     padding: 0.1% 5% 0 0;
-    color: #F1F0D1;
+    color: #006600;
 
 }
 #callout p a{
@@ -46,9 +46,9 @@ img {
     text-decoration: none;
 }
 header{
-    width: 25%;
-    min-height: 200px;
-    padding: 5px;
+    width: 100%;
+    min-height: 0px;
+    padding: 1px;
     text-align: center;
 
 }
@@ -59,27 +59,31 @@ nav ul {
 }
 nav ul li {
     float: left;
-    border: 1px solid #878E63;
+    border: 1px solid #000;
     width: 15%;
+    display: inline-block;
+    margin: 0 calc(4%);
 }
 nav ul li a {
-    background: #F1F0D1;
+    background: #33cc33;
     display: block;
     padding: 5% 12%;
     font-weight: bold;
     font-size: 18px;
-    color: #878E63;
+    color: #ffffff;
     text-decoration: none;
     text-align: center;
+
 }
 nav ul li a:hover, nav ul li.active a {
-    background-color: #ff0000;
+    background-color: #006600;
     color: #F1F0D1;
+
 }
 .banner img {
     width: 50%;
     border-top: 1px solid #ff0000;
-    border-bottom: 1px solid #878E63;
+    border-bottom: 1px solid #33cc33;
 }
 .clearfix {
     clear: both;
@@ -104,10 +108,9 @@ left-col {
     padding: 1%;
 }
 .section {
-    width: 29%;
+    width: 100%;
     float: left;
-    margin: 2% 2%;
-    text-align: center;
+
 }
 footer {
     background: #000;
@@ -116,6 +119,7 @@ footer {
 }
 footer p, footrt h3 {
     color: #F1F0D1;
+    margin: 0 auto;
 }
 footer p a {
     color: #F1F0D1;
@@ -179,3 +183,28 @@ ul li img {
         width: 100%;
         margin: 0;
     }
+
+}
+
+
+#news{
+  display: inline-flex;
+  margin: 5px;
+  padding: 30px;
+  width: 90px;
+
+}
+
+.article-image{
+  width: 250px;
+
+}
+
+.mdl-cell{
+
+  width: 100px;
+  margin: 20px;
+  padding: 0px;
+
+
+}
