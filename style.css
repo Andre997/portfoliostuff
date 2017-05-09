@@ -28,9 +28,9 @@ img {
     border-radius: 2px;
     box-shadow: 0 0 10px 0px rgba(12, 3, 25, 0.8);
 }
-#callout{
+#callout {
     width: 100%;
-    height: auto;
+    height: 429px;
     background: #006600;
     overflow: hidden;
 }
