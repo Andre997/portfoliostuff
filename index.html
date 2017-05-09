@@ -59,8 +59,8 @@
 
         </div>
         <div class="clearfix"></div>
-
-          
+        <div class="section">
+          <div id="news">
             <h3>Main Topics I Have Covered</h3>
             <p>Events</p>
             <p>Objects</p>
@@ -108,7 +108,7 @@
         <script src="news.js"></script>
         <script src="main.js"></script>
         <script>
-        let map
+
 
 
           function initMap() {
@@ -126,7 +126,7 @@
           infowindow = new google.maps.InfoWindow();
           var service = new google.maps.places.PlacesService(map);
           service.nearbySearch({
-         location: myLocation,
+         location: ,
          radius: 500,
          type: ['store']
        }, callback);
